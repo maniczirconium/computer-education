@@ -1,0 +1,45 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+  
+  --font-ui: 'Inter', sans-serif;
+  --font-copy: 'Manrope', sans-serif;
+  --font-serif: 'Fraunces', serif;
+  --font-code: 'Courier Prime', 'Roboto Mono', monospace;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-copy);
+  display: grid;
+}
+
+body > * {
+  width: 100%;
+  max-width: 60ch;
+  margin: auto;
+}
+
+main > h1,
+main > h2 {
+  font-family: var(--font-serif);
+}
+
+main > h1 {
+  font-size: calc(1rem + 3vw);
+  letter-spacing: -4px;
+}
+main > p {
+  text-indent: 2ch;
+  max-width: 50ch;
+  margin: auto;
+  margin-bottom: calc(1rem + 1em);
+}
+
+.footnotes li {
+  font-size: 0.8em;
+}
