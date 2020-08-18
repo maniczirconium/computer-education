@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The World Wide Web &middot; Computer 9</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+    <link rel="stylesheet" ref="https://antaresprogramming.github.io/css/fonts.css?v=2020-08-15%2006:36:01%20+0000" />
+    <link rel="stylesheet" href="/computer-education/src/index.css" />
+</head>
+
+<body>
+    <main>
+        <h1>HTML Syntax</h1>
+        <p role="doc-subtitle">The grammatical rules that HTML follow.</p>
+
+        <h2>File type</h2>
+        <p>To create a webpage, we just need to create an ordinary text file. But instead of <code>.txt</code>, we'll change its filename extension into <code>.html</code>.</p>
+
+        <aside>
+            <h3>The HTML filename extension</h3>
+            <p>When HTML was young, during a time when storage computers were really small, it was important to have really short filenames to give more space to actual file contents. In fact, <i>Microsoft Windows</i> went to the extreme and forced the three-character limit to filename extensions. This is why HTML files used to have <code>.htm</code> as its filename extension. Now, however, we have storage capacities that reach up to terabytes. The lengths of filenames aren't really an issue nowadays, and majority of websites use the longer <code>.html</code> filename extension. You can use any of these.</p>
+        </aside>
+
+        <h2>Syntax</h2>
+        <p>This is what HTML looks like:</p>
+        <pre class="highlighted"><code class="html">&lt;p&gt;</code></pre>
+
+        <p>In this example, <code>p</code> means <q>paragraph</q>. To create this HTML, we type a less-than symbol (<code>&lt;</code>) followed by a letter, word, or abbreviated word, and a greater-than symbol (<code>&gt;</code>). We call this an HTML <dfn>tag</dfn>. This is what HTML markup looks like. HTML syntax is simple. Knowing which tag to use when is what's harder.</p>
+
+        <p>There are two types of tags: the <b>closing</b> and the <b>opening</b> tags. Our previous example &lt;p&gt; is an opening tag. This is what a closing tag looks like:
+        <pre class="highlighted"><code class="html">&lt;/p&gt;</code></pre>
+
+        <p>Opening and closing tags look the same, except closing tags have a forward slash (<code>/</code>) after the less-than symbol (<code>&lt;</code>).
+
+        <p>To markup a paragraph, we put our text between the opening and closing tags:</p>
+        <pre class="highlighted"><code class="html">&lt;p&gt;This is a paragraph&lt;/p&gt;</code></pre>
+
+        <figure>
+            <svg style="" fill="#fafafa" class="img--borderize" viewBox="0 -10 300 100">
+              <style>
+                .code { font-family: monospace; font-size: 18px; fill: #000a; }
+                .desc { font-family: sans-serif;font-size: 14px; fill: #000c; }
+              </style>
+              <text class="code" y="35" x="5">&lt;p&gt;</text>
+              <text class="code" y="35" x="38">This is a paragraph.</text>
+              <text class="code" y="35" x="250">&lt;/p&gt;</text>
+              
+              <line x2="275" stroke="#000a" y1="18" y2="18" x1="20"></line>
+              <line stroke="#000a" y1="18" y2="23" x1="20" x2="20"></line>
+              <line x1="275" x2="275" stroke="#000a" y1="18" y2="23"></line>
+              
+              <text class="desc" x="125" y="13">Element</text>
+              <text class="desc" x="5" style="" y="75">Opening Tag</text>
+              <text class="desc" y="75" x="210">Closing Tag</text>
+              <text class="desc" x="125" y="75">Content</text>
+              
+              <line stroke="#000a" y1="47" y2="60" x1="20" x2="20"></line>
+              <line stroke="#000a" y1="47" y2="60" x1="150" x2="150"></line>
+              <line x1="275" x2="275" stroke="#000a" y1="47" y2="60"></line>
+          </svg>
+            <figcaption>The opening and closing tags, along with its content, when put together, is called an <b>element</b></figcaption>
+        </figure>
+        <p>Closing and opening tags are always together. When they are combined along with the content, we call it an <b>element</b></p>
+        <p>Not all elements have a closing tag, however, like what we will see in future lessons. Most of the HTML elements have closing tags, though. Let's look at other examples:</p>
+        
+        <pre class="highlighted"><code class="html">&lt;p>This is a paragraph.&lt;/p>
+&lt;h1>This is a headline.&lt;/h1>
+&lt;article>This is an article.&lt;/article></code></pre>
+
+        <p>We will look at many HTML elements throughout this class. We will study how each element is used and when. So don't worry about what each of these elements mean just yet. For now, let's focus on HTML's basic mechanics.</p>
+        <p>Indicating purpose and meaning is what markup is made for. It gives computers more details about what content or user interface means. HTML serves as a connection between the real world and the computer's perception of it. Let's look at another example.</p>
+        
+        <pre class="highlighted"><code class="html">&lt;p>This is a paragraph. It contains text that is &lt;em>emphasized&lt;/em> so reader would know that it is important.&lt;/p></code></pre>
+        
+        <p>The whole paragraph is wrapped in <code>&lt;p>&lt;/p></code> tags. Inside the paragraph, a word is wrapped in opening and closing <code>em</code> tags. You will learn what the <code>em</code> tag is for in the next lesson. For now, notice how we can put an HTML element inside another HTML element. This is what we call <b>nesting</b>. And as you will see in the next lessons, the HTML page is a big collection of HTML elements that are nested inside one another.</p>
+        
+        <p>If you have a background in Computer Science, you will recognize that from this nesting pattern, we can build a structure called a document tree. This document tree is just like a family tree, with parents, children, and siblings. The browser is aware of this document tree and builds its own <q>family tree</q> based on which element is related to another and how. This is what we call the <b>Document Object Model</b>.</p>
+        
+        <blockquote>
+        <p>Ang <b>Document Object Model (DOM) Tree</b> ay isang hierarchy, isang structure ng HTML elements na kadalasan nang ginagamit para i-connect ang HTML sa CSS at JavaScript.</p>
+        </blockquote>
+        
+        <p>You will encounter this DOM tree when you are writing CSS and JavaScript.</p>
+        
+        <p>The browser will then use this DOM tree to build another structure called the <i>accessibility tree</i>. We will also talk about accessibility later in this class. But for now, just remember that how you arrange and nest HTML elements inside one another and which HTML elements you choose to use will influence how your users will experience your website&mdash;including persons with disability. All of that starts with proper nesting of HTML elements. This next example is an HTML markup that has a nesting that you will use often in the future:</p>
+        
+        <pre class="highlighted"><code class="html">&lt;article&gt;
+  &lt;h1&gt;This is a headline.&lt;/h1&gt;
+  &lt;p&gt;What you are reading is the first paragraph.&lt;/p&gt;
+  &lt;p&gt;That paragraph will be followed by this, the second one.&lt;/p&gt;
+  &lt;p&gt;This is a paragraph. May text dito na &lt;em&gt;naka-emphasize&lt;/em&gt; para sa malaman ng reader na mahalaga ito.&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+          document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+          });
+        });
+    </script>
+</body>
+
+</html>

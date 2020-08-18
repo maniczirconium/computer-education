@@ -15,13 +15,16 @@ body {
   margin: 0;
   font-family: 'Manrope', sans-serif;
   font-family: var(--font-copy);
+  background-color: #fff;
   display: grid;
+  --max-width: 825px;
 }
 
-body > * {
+main > * {
   width: 100%;
-  max-width: 60ch;
+  max-width: var(--max-width);
   margin: auto;
+  padding: 1rem;
 }
 
 main > h1,
@@ -35,11 +38,125 @@ main > h1 {
 }
 main > p {
   text-indent: 2ch;
-  max-width: 50ch;
+  max-width: var(--max-width);
   margin: auto;
-  margin-bottom: calc(1rem + 1em);
+  margin-bottom: 1em;
 }
 
 .footnotes li {
   font-size: 0.8em;
+}
+
+p[role=doc-subtitle] {
+  font-size: 1.25em;
+  opacity: 0.7;
+  text-indent: 0;
+  font-family: var(--font-serif);
+  margin-bottom: 1em;
+}
+
+main > h1:first-child {
+  margin-bottom: 0;
+}
+
+code {
+  font-family: var(--font-code);
+  background-color: #0001;
+  border: 1px solid #0003;
+  padding: 0 2px;
+}
+
+main > aside {
+  font-size: 0.75em;
+  margin: 1rem auto;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  max-width: 50ch;
+  background-image: linear-gradient(
+    to bottom,
+    #0003,
+    #0003 5px,
+    #0000 5px,
+    #0000 calc(100% - 6px),
+    #0003 calc(100% - 6px),
+    #0003 calc(100% - 3px),
+    #0000 calc(100% - 3px),
+    #0000 calc(100% - 1px),
+    #0003 calc(100% - 1px)
+  )
+}
+
+@media screen and (min-width: 900px) {
+  body main aside {
+    float: left;
+    margin: 0;
+    max-width: 30ch;
+    margin: 1rem;
+    margin-right: 2rem;
+    background-color: #fff;
+    background-image: linear-gradient(to left, #0003, #0003 3px, #0000 3px, #0001 3px, #0000);
+    text-align: right;
+  }
+}
+
+/**********
+ * Highlighter
+ **********/
+ 
+pre.highlighted {
+  background-color: #0001;
+  border: 1px solid #0003;
+  margin: 0 auto;
+  display: block;
+  overflow: auto;
+  scrollbar-color: #0000 #0000;
+  transition: scrollbar-color 300ms;
+}
+
+pre.highlighted:hover {
+  scrollbar-color: #0003 #0000;
+}
+ 
+code.html {
+  all: revert;
+}
+
+main > figure {
+	max-width: none;
+	margin: 1rem auto;
+}
+
+main > figure svg,
+main > figure img {
+  max-width: calc(var(--max-width) * 1.25);
+  margin: auto;
+  margin-bottom: 1rem;
+  display: block;
+  border: 1px solid #0003;
+  background-color: #000001c;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 5px #0003;
+}
+
+main > figure figcaption {
+  max-width: var(--max-width);
+  margin: auto;
+  font-size: 0.8em;
+  opacity: 0.75;
+  text-align: center;
+  font-family: var(--font-serif);
+}
+
+blockquote {
+	font-family: var(--font-serif);
+	font-style: normal;
+	font-size: 1.5rem;
+	border: none;
+	text-align: center;
+	line-height: 1.5;
+	max-width: calc((var(--max-width) / 3) * 2);
+}
+
+blockquote p {
+	margin: 0;
 }
